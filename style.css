@@ -1,6 +1,6 @@
 .container {
   margin: 0 auto;
-  max-width: 1100px;
+  max-width: 1000px;
 }
   
 .row {
@@ -16,20 +16,17 @@
   width: 100%;
   display: block;
 }
-  
-.col-6 {
-  width: 48%;
-  flex: 0 0 48%;
-  display: inline-block;
-}
-  
-.col--book {
-  float: left;
-  width: 30%;
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
 
+.col--container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  align-content: flex-start;
+}
+  
 h1 {
   text-align: center;
 }
@@ -39,13 +36,17 @@ h2 {
   text-align: center;
   clear:both;
 }
+
+.col--book {
+  flex-basis: 33.3333%
+}
   
 .bookwrapper {
   margin: 0 auto 4rem;
-  height: 29rem;
-  width: 20rem;
+  height: 26rem;
   border-top: 1px solid #fff;
   border-left: 1px solid #fff;
+  padding: 0 1rem;
 }
   
 .book {
@@ -57,7 +58,7 @@ h2 {
   transition: -webkit-transform 0.6s;
   transition: transform 0.6s;
   outline: none;
-  height: 28.355rem;
+  height: 25.355rem;
   margin: 0.645rem 0 0 0.645rem;
   padding: 0 1.355rem 1.355rem 0;
   text-decoration: none;
@@ -115,32 +116,20 @@ h2 {
 .align-right {
   justify-content: flex-end;
 }
-  
-@media (max-width: 800px) {
-  .col-6 {
-    width: 100%;
-    flex: 0 0 100%;
-    display: block;
-  }
-}
-  
-@media (max-width: 750px) {
-  .row {
-    margin-left: 16px;
-    margin-right: 16px;
-  }
-  
-  .col,
-  .col-6 {
-    width: 100%;
-    flex: 0 0 100%;
-    display: block;
-  }
-  
+
+@media (max-width: 850px) {
   .col--book {
-    width: 48%;
-    flex: 0 0 48%;
-    display: inline-block;
+    flex-basis: 50%
+  }
+}  
+
+@media (max-width: 640px) {
+  .col--book {
+    flex-basis: 100%
+  }
+
+  .bookwrapper {
+    max-width: 20rem;
   }
 }
   

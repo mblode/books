@@ -23,7 +23,7 @@ fetch('https://api.trello.com/1/boards/D2rWeR8z/lists?token='+token+'&key='+key,
 .then(function(data) {  
   $.each(data, function(i, item) {
     $('<h2>').text(data[i].name).appendTo('#root');
-    $('<div>').attr('id', data[i].id).appendTo('#root');
+    $("<div class='col--container'>").attr('id', data[i].id).appendTo('#root');
     listId.push(data[i].id);
   });
 }).catch(function(errorz) {  
