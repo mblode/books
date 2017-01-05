@@ -2,7 +2,6 @@ var token = 'cc664a859e355da6299c34d88c273bf84f806c988c472bd3a54ab89c3d786fc4';
 var key = '77005348794f2cec3e53474442ef381b';
 var url = 'https://api.trello.com/1/boards/D2rWeR8z/lists?token='+token+'&key='+key;
 var listId = [];
-var dataDict = {};
 
 function status(response) {  
   if (response.status >= 200 && response.status < 300) {  
