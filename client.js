@@ -20,6 +20,7 @@ function json(response) {
 fetch('https://api.trello.com/1/boards/D2rWeR8z/lists?token=' + token + '&key=' + key, {
   method: 'get'
 }).then(status).then(json).then(function (data) {
+  console.log(data);
   $.each(data, function (i, item) {
     $('<h2>').text(data[i].name).appendTo('#root');
     $("<div class='col--container'>").attr('id', data[i].id).appendTo('#root');
@@ -32,6 +33,7 @@ fetch('https://api.trello.com/1/boards/D2rWeR8z/lists?token=' + token + '&key=' 
 fetch('https://api.trello.com/1/boards/D2rWeR8z/cards?token=' + token + '&key=' + key, {
   method: 'get'
 }).then(status).then(json).then(function (data) {
+  console.log(data);
   $.each(data, function (i, item) {
     for (var j = 0; j < listId.length; j++) {
       if (listId[j] == data[i].idList) {
