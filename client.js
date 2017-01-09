@@ -17,7 +17,7 @@ function json(response) {
   return response.json();
 }
 
-fetch('https://api.trello.com/1/boards/D2rWeR8z/lists?token=' + token + '&key=' + key + '&fields=name', {
+fetch('https://api.trello.com/1/boards/D2rWeR8z/lists?token=' + token + '&key=' + key, {
   method: 'get'
 }).then(status).then(json).then(function (data) {
   $.each(data, function (i, item) {
