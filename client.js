@@ -25,11 +25,11 @@ fetch('https://api.trello.com/1/boards/D2rWeR8z/lists?token=' + token + '&key=' 
     $("<div class='col--container'>").attr('id', data[i].id).appendTo('#root');
     listId.push(data[i].id);
   });
-}).catch(function (errorz) {
+}).catch(function (error) {
   console.log('Request failed', error);
 });
 
-fetch('https://api.trello.com/1/boards/D2rWeR8z/cards?token=' + token + '&key=' + key + '&filter=open&fields=name,desc,idLabels', {
+fetch('https://api.trello.com/1/boards/D2rWeR8z/cards?token=' + token + '&key=' + key, {
   method: 'get'
 }).then(status).then(json).then(function (data) {
   $.each(data, function (i, item) {
